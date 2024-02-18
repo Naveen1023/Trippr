@@ -1,0 +1,61 @@
+Database :
+1. Theater(id, name, numberOfHalls, location)
+2. TheaterHall (id, name, numberOfSeats)
+3. Movie (id, name, description, country, genre, releaseDate)
+4. Show (id,startTime ,endTime, createdAt, updatedAt )
+5. BookingDetails(id, numberOfSeats, bookingStatus, createdAt)
+
+---------------------------------------------------Theater--------------------------------------------------------------------
+Create Theater :
+    POST Request : /theater/add
+    Request Body : {
+        name : "BalaJi Theater",
+        numberOfHalls : 2,
+        location : "Bala Ji Nagar, Bangalore"
+    }
+
+    Response : {
+        status : "Success",
+        data : {
+            theaterId : 1
+        },
+        message : "Success Message"
+    }
+
+-------------------------------------------------TheaterHall--------------------------------------------------------------------
+
+Add TheaterHalls :
+    POST Request : /theaterHalls/add
+    Request Body : {
+        theaterId : 7,
+        name : Hall-Alphonso,
+        numberOfSeats : 8
+    }
+
+    Response : {
+        status : "Success",
+        data : {
+            theaterHallId : 1
+        }
+        message : "Success Message"
+    }
+
+-------------------------------------------------Show--------------------------------------------------------------------
+
+Add Show :
+Delete Show :
+
+-------------------------------------------------User--------------------------------------------------------------------
+
+Add User
+
+-------------------------------------------------Booking Details--------------------------------------------------------------------
+
+Create Booking :  /booking/create
+
+
+
+Delete Booking :
+
+
+

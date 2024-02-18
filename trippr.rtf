@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh10500\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 User Flow : \
+1. User can Search a movie based upon certain parameters. \
+2. Users are shown list of available shows of that movie in different theatres. They can select the show.\
+3. Users are now shown all the seats in that show. \
+4. User can select # seats and book. (Race condition here.) (reservation_success, reservation_failed,etc. )\
+\
+Features : \
+1. Build core feature of booking.\
+2. On listing of new movie, send an email to all the registered users.\
+3. User Auth, Payment Integration can be added later on. \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+API : \
+searchMovie(movieName, city, date) => returns the list of all the shows running that movie with similar name in that city on that particular date.\
+\
+getShowDetails(showId) => returns list of seats in the show.\
+\
+reserveSeats(showId) => returns status of reservation.\
+ \
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+Database : \
+One cinema can have multiple movie halls. Each hall can run only one movie at a time. One movie can have multiple shows.\
+\
+\
+Movie : id, title, desc, duration, lang,releaseDate,country,genre (done)\
+Theatre : id, name, totalCinemaHalls,location, (done)\
+Show: id, createdOn, Starttime, endTime (done)\
+Cinemahall: id, name, noOfSeats (done)\
+Show _seat: seatNo, price, isReserved, showId  (done)\
+Booking : booking_number, noOfSeats, CreatedOn, status:BookingStatus, showId (done)\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Implementation :  SpringBoot, REST, MVC, Postman, Maven, Hibernate/JPA (not JDBC), Spring EOP or Gmail SMTP, MySQL, \
+\
+\
+Controller : will talk to service class\
+Service : will have all the business logic, will talk with data layer using DAO classes. \
+Data : responsible for talking to database.\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+How to ensure concurrency at same time of booking ? ===> ensure Transaction Isolation levels to Serialisable then perform transaction. Read about concurrency, Locking, isolation levels in DB.\
+\
+\
+\
+}

@@ -1,0 +1,36 @@
+Database :
+1. Theater(id, name, numberOfHalls, location)
+2. TheaterHall (id, name, numberOfSeats)
+3. Movie (id, name, description, country, genre, releaseDate)
+4. Show (id,startTime ,endTime, createdAt, updatedAt )
+5. BookingDetails(id, numberOfSeats, bookingStatus, createdAt)
+
+---------------------------------------------------USER STORIES--------------------------------------------------------------------
+Flow :
+1. User(Business side) can select an option to create Theater(name, numberOfHalls, location) -> (DONE)
+2. Then, He can create total TheaterHalls(theater_id, name, numberOfSeats) as specified in previous step.
+   (By default, total mentioned seats will be added in each theaterHall.(preDefined seats)) -> (DONE)
+
+3. Admin can add movie(title, desc, language, releaseDate, country, genre) in the Database which can be listed in various shows. -> (DONE)
+4. Business User can add shows(rateMultiplier, startTime, endTime, movieName, theaterId, theaterHallId) -> (DONE)
+
+5. End User can search movie by name(movieName => find the movie, and show the movie details only) (DONE)
+6. Upon clicking "Book Now", i.e. send request using movieId => give the list of theaters and shows running in them....(PARTIALLY DONE,
+    implement Google API to give nearest theaters first)
+6. Among all the listed shows,User can select one show => what information to send for given showID =>
+    get showDetails,showSeatsDetails
+
+7. After selection, User can choose further details (numberOfSeats) and book ticket(will need showID, #seats, list of seatsID)
+   for the booking....
+
+
+Practices to Follow/Implement :
+ 1. Custom Exception Handling
+ 2. Builder Design Pattern for Entity Creation (DONE)
+ 3. Singleton Design pattern for DI (DONE)
+ 4. Custom Request/Response classes (DONE)
+ 5. Migrations
+ 6. Google API Integration for shortest road distance calculation
+
+
+
