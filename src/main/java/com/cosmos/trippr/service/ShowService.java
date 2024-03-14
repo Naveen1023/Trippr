@@ -5,6 +5,7 @@ import com.cosmos.trippr.controller.utils.GetShowsByMovieNameResponse;
 import com.cosmos.trippr.controller.utils.GetTheaterWiseShowsByMovieIdResponse;
 import com.cosmos.trippr.dto.ShowDTO;
 import com.cosmos.trippr.entity.ShowEntity;
+import com.cosmos.trippr.service.pojos.GetShowDetailsByIdResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public interface ShowService {
 
   List<GetShowsByMovieNameResponse> getByMovieName(String movieName);
 
-  void getShowById(long id);
+  GetShowDetailsByIdResponse getShowById(long id);
 
-    GetTheaterWiseShowsByMovieIdResponse getTheaterWiseShowByMovieId(long movieId);
+  GetTheaterWiseShowsByMovieIdResponse getTheaterWiseShowByMovieId(long movieId);
 }

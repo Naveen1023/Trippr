@@ -1,5 +1,6 @@
 package com.cosmos.trippr.dto;
 
+import com.cosmos.trippr.enums.SeatType;
 import lombok.*;
 
 @Data
@@ -9,8 +10,9 @@ import lombok.*;
 @ToString
 public class ShowSeatsDTO {
   private long id;
-  private int seatNo;
+  private String seatNo;
   private double price;
   private boolean isBooked;
+  private String seatType;
 }
 
