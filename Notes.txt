@@ -18,7 +18,7 @@ Flow :
 6. Upon clicking "Book Now", i.e. send request using movieId => give the list of theaters and shows running in them....(PARTIALLY DONE,
     implement Google API to give nearest theaters first)
 6. Among all the listed shows,User can select one show => what information to send for given showID =>
-    get showDetails,showSeatsDetails
+   get showDetails,showSeatsDetails
 
 7. After selection, User can choose further details (numberOfSeats) and book ticket(will need showID, #seats, list of seatsID)
    for the booking....

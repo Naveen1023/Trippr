@@ -5,17 +5,20 @@ import com.cosmos.trippr.controller.utils.GetShowDetails;
 import com.cosmos.trippr.controller.utils.GetShowsByMovieNameResponse;
 import com.cosmos.trippr.controller.utils.GetTheaterWiseShowsByMovieIdResponse;
 import com.cosmos.trippr.dto.ShowDTO;
+import com.cosmos.trippr.dto.ShowSeatsDTO;
 import com.cosmos.trippr.dto.TheaterDTO;
 import com.cosmos.trippr.entity.*;
 import com.cosmos.trippr.mappers.ShowMapper;
 import com.cosmos.trippr.mappers.TheaterMapper;
 import com.cosmos.trippr.repository.*;
 import com.cosmos.trippr.service.ShowService;
+import com.cosmos.trippr.service.pojos.GetShowDetailsByIdResponse;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
+import java.awt.image.AreaAveragingScaleFilter;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -58,7 +61,7 @@ public class ShowServiceImpl implements ShowService {
       .build();
 
     // set initial show seats
-    List<ShowSeatsEntity> showSeats = getShowSeats(theaterHall);
+    List<ShowSeatsEntity> showSeats = getShowSeats(theaterHall, show.getRateMultiplier());
 
     //save everything
     show.setShowSeats(showSeats);
@@ -97,8 +100,33 @@ public class ShowServiceImpl implements ShowService {
   }
 
   @Override
-  public void getShowById(long id) {
+  public GetShowDetailsByIdResponse getShowById(long id) {
 
+    Optional<ShowEntity> showResponse = showRepository.findById(id);
+    if(!showResponse.isPresent()) throw new RuntimeException("Show not Found for Id : "+id);
+
+    ShowEntity show = showResponse.get();
+    List<ShowSeatsEntity> showSeats = show.getShowSeats();
+    List<ShowSeatsDTO> showSeatsDTOS = new ArrayList<>();
+
+    for(ShowSeatsEntity showSeat : showSeats) {
+      ShowSeatsDTO showSeatDTO = ShowSeatsDTO.builder()
+        .id(showSeat.getId())
+        .seatNo(showSeat.getSeatNo())
+        .seatType(showSeat.getSeatType().toString())
+        .price(showSeat.getPrice())
+        .isBooked(showSeat.isBooked())
+        .build();
+
+      showSeatsDTOS.add(showSeatDTO);
+    }
+
+    return GetShowDetailsByIdResponse.builder()
+      .id(show.getId())
+      .startTime(show.getStartTime())
+      .endTime(show.getEndTime())
+      .showSeats(showSeatsDTOS)
+      .build();
   }
 
   @Override
@@ -127,23 +155,23 @@ public class ShowServiceImpl implements ShowService {
     return GetTheaterWiseShowsByMovieIdResponse.builder().theaterShows(theaterShowList).build();
   }
 
-  public List<ShowSeatsEntity> getShowSeats(TheaterHallEntity theaterHall) {
+  public List<ShowSeatsEntity> getShowSeats(TheaterHallEntity theaterHall, double rateMultiplier) {
     List<TheaterHallSeatsEntity> hallSeats = theaterHall.getTheaterHallSeats();
     List<ShowSeatsEntity> showSeats = new ArrayList<>();
 
     for (TheaterHallSeatsEntity hallSeat : hallSeats) {
-      ShowSeatsEntity showSeat = getShowSeat(hallSeat);
+      ShowSeatsEntity showSeat = getShowSeat(hallSeat, rateMultiplier);
       showSeats.add(showSeat);
     }
     return showSeats;
   }
 
-  public ShowSeatsEntity getShowSeat(TheaterHallSeatsEntity hallSeat) {
+  public ShowSeatsEntity getShowSeat(TheaterHallSeatsEntity hallSeat, double rateMultiplier) {
     return ShowSeatsEntity.builder()
       .seatNo(hallSeat.getSeatNumber())
       .seatType(hallSeat.getSeatType())
       .isBooked(false)
-      .price(hallSeat.getPrice())
+      .price(hallSeat.getPrice() * rateMultiplier)
       .build();
   }
 }

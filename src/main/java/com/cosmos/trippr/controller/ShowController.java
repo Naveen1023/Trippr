@@ -6,6 +6,7 @@ import com.cosmos.trippr.controller.utils.GetTheaterWiseShowsByMovieIdResponse;
 import com.cosmos.trippr.controller.utils.ResponseBase;
 import com.cosmos.trippr.entity.ShowEntity;
 import com.cosmos.trippr.service.ShowService;
+import com.cosmos.trippr.service.pojos.GetShowDetailsByIdResponse;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -87,13 +88,10 @@ public class ShowController {
   public ResponseEntity<Object> getShowsById(@PathVariable long id ) {
     try {
       log.info("Request to get a show by Id  : " + id + " is RECEIVED.");
-      showService.getShowById(id);
-      return ResponseBase.generateResponse(HttpStatus.OK, "Show details here...", "Successfully Fetched");
+      GetShowDetailsByIdResponse showResponse = showService.getShowById(id);
+      return ResponseBase.generateResponse(HttpStatus.OK, showResponse, "Successfully Fetched");
     } catch (Exception e) {
       return ResponseBase.generateResponse(HttpStatus.UNPROCESSABLE_ENTITY, null, e.getMessage());
     }
   }
-
-
-
 }
