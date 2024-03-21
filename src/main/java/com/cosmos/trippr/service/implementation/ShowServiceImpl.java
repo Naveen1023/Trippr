@@ -103,13 +103,13 @@ public class ShowServiceImpl implements ShowService {
   public GetShowDetailsByIdResponse getShowById(long id) {
 
     Optional<ShowEntity> showResponse = showRepository.findById(id);
-    if(!showResponse.isPresent()) throw new RuntimeException("Show not Found for Id : "+id);
+    if (!showResponse.isPresent()) throw new RuntimeException("Show not Found for Id : " + id);
 
     ShowEntity show = showResponse.get();
     List<ShowSeatsEntity> showSeats = show.getShowSeats();
     List<ShowSeatsDTO> showSeatsDTOS = new ArrayList<>();
 
-    for(ShowSeatsEntity showSeat : showSeats) {
+    for (ShowSeatsEntity showSeat : showSeats) {
       ShowSeatsDTO showSeatDTO = ShowSeatsDTO.builder()
         .id(showSeat.getId())
         .seatNo(showSeat.getSeatNo())
@@ -123,6 +123,7 @@ public class ShowServiceImpl implements ShowService {
 
     return GetShowDetailsByIdResponse.builder()
       .id(show.getId())
+      .rateMultiplier(show.getRateMultiplier())
       .startTime(show.getStartTime())
       .endTime(show.getEndTime())
       .showSeats(showSeatsDTOS)

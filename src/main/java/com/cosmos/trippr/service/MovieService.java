@@ -10,7 +10,6 @@ import java.util.List;
 public interface MovieService {
 
   public MovieEntity addMovie(AddMovieRequest addMovieRequest);
-
   List<MovieDTO> getMovieByName(String name);
   MovieDTO getMovieById(long id);
 }

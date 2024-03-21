@@ -5,12 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class CreateBookingRequest {
-  private String name;
-  private int numberOfSeats;
-  private long theaterId;
+  private long showId;
+  private long userId;
+  private List<String> seatNumbers;
 }
