@@ -1,6 +1,6 @@
 package com.cosmos.trippr.service.implementation;
 
-import com.cosmos.trippr.controller.utils.AddUserRequest;
+import com.cosmos.trippr.controller.requestResponseModels.AddUserRequest;
 import com.cosmos.trippr.entity.UserEntity;
 import com.cosmos.trippr.repository.UserRepository;
 import com.cosmos.trippr.service.UserService;

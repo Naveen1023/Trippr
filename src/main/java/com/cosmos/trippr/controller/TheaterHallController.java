@@ -1,8 +1,7 @@
 package com.cosmos.trippr.controller;
 
-import com.cosmos.trippr.controller.utils.AddTheaterHallRequest;
-import com.cosmos.trippr.controller.utils.ResponseBase;
-import com.cosmos.trippr.dto.TheaterHallDTO;
+import com.cosmos.trippr.controller.requestResponseModels.AddTheaterHallRequest;
+import com.cosmos.trippr.controller.requestResponseModels.ResponseBase;
 import com.cosmos.trippr.service.TheaterHallService;
 import com.cosmos.trippr.service.pojos.AddTheaterHallResponse;
 import lombok.extern.log4j.Log4j2;

@@ -1,6 +1,6 @@
 package com.cosmos.trippr.service;
 
-import com.cosmos.trippr.controller.utils.CreateBookingRequest;
+import com.cosmos.trippr.controller.requestResponseModels.CreateBookingRequest;
 import com.cosmos.trippr.service.pojos.BookTicketResponse;
 import org.springframework.stereotype.Service;
 

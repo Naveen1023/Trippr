@@ -1,9 +1,9 @@
 package com.cosmos.trippr.controller;
 
-import com.cosmos.trippr.controller.utils.AddShowRequest;
-import com.cosmos.trippr.controller.utils.GetShowsByMovieNameResponse;
-import com.cosmos.trippr.controller.utils.GetTheaterWiseShowsByMovieIdResponse;
-import com.cosmos.trippr.controller.utils.ResponseBase;
+import com.cosmos.trippr.controller.requestResponseModels.AddShowRequest;
+import com.cosmos.trippr.controller.requestResponseModels.GetShowsByMovieNameResponse;
+import com.cosmos.trippr.controller.requestResponseModels.GetTheaterWiseShowsByMovieIdResponse;
+import com.cosmos.trippr.controller.requestResponseModels.ResponseBase;
 import com.cosmos.trippr.entity.ShowEntity;
 import com.cosmos.trippr.service.ShowService;
 import com.cosmos.trippr.service.pojos.GetShowDetailsByIdResponse;

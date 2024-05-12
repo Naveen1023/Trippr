@@ -1,9 +1,8 @@
 package com.cosmos.trippr.service.implementation;
 
-import com.cosmos.trippr.controller.utils.AddShowRequest;
-import com.cosmos.trippr.controller.utils.GetShowDetails;
-import com.cosmos.trippr.controller.utils.GetShowsByMovieNameResponse;
-import com.cosmos.trippr.controller.utils.GetTheaterWiseShowsByMovieIdResponse;
+import com.cosmos.trippr.controller.requestResponseModels.AddShowRequest;
+import com.cosmos.trippr.controller.requestResponseModels.GetShowsByMovieNameResponse;
+import com.cosmos.trippr.controller.requestResponseModels.GetTheaterWiseShowsByMovieIdResponse;
 import com.cosmos.trippr.dto.ShowDTO;
 import com.cosmos.trippr.dto.ShowSeatsDTO;
 import com.cosmos.trippr.dto.TheaterDTO;
@@ -17,8 +16,6 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
-import java.awt.image.AreaAveragingScaleFilter;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;

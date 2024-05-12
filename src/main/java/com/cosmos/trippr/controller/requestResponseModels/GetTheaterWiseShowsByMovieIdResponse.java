@@ -1,9 +1,8 @@
-package com.cosmos.trippr.controller.utils;
+package com.cosmos.trippr.controller.requestResponseModels;
 
 import com.cosmos.trippr.dto.ShowDTO;
 import com.cosmos.trippr.dto.TheaterDTO;
 import lombok.*;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

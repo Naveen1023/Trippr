@@ -1,6 +1,6 @@
 package com.cosmos.trippr.service.implementation;
 
-import com.cosmos.trippr.controller.utils.AddMovieRequest;
+import com.cosmos.trippr.controller.requestResponseModels.AddMovieRequest;
 import com.cosmos.trippr.dto.MovieDTO;
 import com.cosmos.trippr.entity.MovieEntity;
 import com.cosmos.trippr.mappers.MovieMapper;

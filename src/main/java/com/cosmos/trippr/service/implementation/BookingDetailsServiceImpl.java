@@ -1,6 +1,6 @@
 package com.cosmos.trippr.service.implementation;
 
-import com.cosmos.trippr.controller.utils.CreateBookingRequest;
+import com.cosmos.trippr.controller.requestResponseModels.CreateBookingRequest;
 import com.cosmos.trippr.entity.BookingDetailsEntity;
 import com.cosmos.trippr.entity.ShowEntity;
 import com.cosmos.trippr.entity.ShowSeatsEntity;

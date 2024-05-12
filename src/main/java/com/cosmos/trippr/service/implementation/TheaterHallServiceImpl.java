@@ -1,6 +1,6 @@
 package com.cosmos.trippr.service.implementation;
 
-import com.cosmos.trippr.controller.utils.AddTheaterHallRequest;
+import com.cosmos.trippr.controller.requestResponseModels.AddTheaterHallRequest;
 import com.cosmos.trippr.entity.TheaterEntity;
 import com.cosmos.trippr.entity.TheaterHallEntity;
 import com.cosmos.trippr.entity.TheaterHallSeatsEntity;
