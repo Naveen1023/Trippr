@@ -1,4 +1,4 @@
-package com.cosmos.trippr.controller.utils;
+package com.cosmos.trippr.controller.requestResponseModels;
 
 import com.cosmos.trippr.dto.MovieDTO;
 import com.cosmos.trippr.dto.ShowSeatsDTO;

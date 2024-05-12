@@ -1,9 +1,8 @@
 package com.cosmos.trippr.controller;
 
 
-import com.cosmos.trippr.controller.utils.CreateBookingRequest;
-import com.cosmos.trippr.controller.utils.ResponseBase;
-import com.cosmos.trippr.entity.MovieEntity;
+import com.cosmos.trippr.controller.requestResponseModels.CreateBookingRequest;
+import com.cosmos.trippr.controller.requestResponseModels.ResponseBase;
 import com.cosmos.trippr.service.BookingDetailsService;
 import com.cosmos.trippr.service.pojos.BookTicketResponse;
 import lombok.extern.log4j.Log4j2;

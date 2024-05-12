@@ -1,9 +1,8 @@
 package com.cosmos.trippr.service;
 
-import com.cosmos.trippr.controller.utils.AddShowRequest;
-import com.cosmos.trippr.controller.utils.GetShowsByMovieNameResponse;
-import com.cosmos.trippr.controller.utils.GetTheaterWiseShowsByMovieIdResponse;
-import com.cosmos.trippr.dto.ShowDTO;
+import com.cosmos.trippr.controller.requestResponseModels.AddShowRequest;
+import com.cosmos.trippr.controller.requestResponseModels.GetShowsByMovieNameResponse;
+import com.cosmos.trippr.controller.requestResponseModels.GetTheaterWiseShowsByMovieIdResponse;
 import com.cosmos.trippr.entity.ShowEntity;
 import com.cosmos.trippr.service.pojos.GetShowDetailsByIdResponse;
 import org.springframework.stereotype.Service;

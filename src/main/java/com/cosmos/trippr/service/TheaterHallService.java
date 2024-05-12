@@ -1,7 +1,7 @@
 package com.cosmos.trippr.service;
 
 
-import com.cosmos.trippr.controller.utils.AddTheaterHallRequest;
+import com.cosmos.trippr.controller.requestResponseModels.AddTheaterHallRequest;
 import com.cosmos.trippr.service.pojos.AddTheaterHallResponse;
 import org.springframework.stereotype.Service;
 

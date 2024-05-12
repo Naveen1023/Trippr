@@ -1,6 +1,6 @@
 package com.cosmos.trippr.mappers;
 
-import com.cosmos.trippr.controller.utils.GetShowsByMovieNameResponse;
+import com.cosmos.trippr.controller.requestResponseModels.GetShowsByMovieNameResponse;
 import com.cosmos.trippr.dto.MovieDTO;
 import com.cosmos.trippr.dto.ShowDTO;
 import com.cosmos.trippr.dto.TheaterDTO;

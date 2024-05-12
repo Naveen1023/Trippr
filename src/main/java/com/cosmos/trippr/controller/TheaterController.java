@@ -1,6 +1,6 @@
 package com.cosmos.trippr.controller;
 
-import com.cosmos.trippr.controller.utils.ResponseBase;
+import com.cosmos.trippr.controller.requestResponseModels.ResponseBase;
 import com.cosmos.trippr.dto.TheaterDTO;
 import com.cosmos.trippr.service.TheaterService;
 import com.cosmos.trippr.service.pojos.AddTheaterResponse;

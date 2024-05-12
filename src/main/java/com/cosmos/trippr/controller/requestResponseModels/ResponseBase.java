@@ -1,4 +1,4 @@
-package com.cosmos.trippr.controller.utils;
+package com.cosmos.trippr.controller.requestResponseModels;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;

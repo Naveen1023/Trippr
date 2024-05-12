@@ -1,10 +1,9 @@
 package com.cosmos.trippr.controller;
 
-import com.cosmos.trippr.controller.utils.AddUserRequest;
-import com.cosmos.trippr.controller.utils.ResponseBase;
+import com.cosmos.trippr.controller.requestResponseModels.AddUserRequest;
+import com.cosmos.trippr.controller.requestResponseModels.ResponseBase;
 import com.cosmos.trippr.entity.UserEntity;
 import com.cosmos.trippr.service.UserService;
-import com.cosmos.trippr.service.pojos.AddTheaterHallResponse;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

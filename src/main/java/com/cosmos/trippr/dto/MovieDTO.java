@@ -2,6 +2,7 @@ package com.cosmos.trippr.dto;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
@@ -9,7 +10,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @ToString
 @Builder
-public class MovieDTO {
+public class MovieDTO implements Serializable {
   private long id;
   private String title;
   private String description;

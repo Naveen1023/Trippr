@@ -1,4 +1,4 @@
-package com.cosmos.trippr.controller.utils;
+package com.cosmos.trippr.controller.requestResponseModels;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
